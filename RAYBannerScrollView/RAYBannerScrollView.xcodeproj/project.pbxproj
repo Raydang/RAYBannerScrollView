@@ -19,6 +19,7 @@
 		7159C6301B1D938100E7E16D /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7159C62C1B1D938100E7E16D /* 2.jpg */; };
 		7159C6311B1D938100E7E16D /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7159C62D1B1D938100E7E16D /* 3.jpg */; };
 		7159C6321B1D938100E7E16D /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7159C62E1B1D938100E7E16D /* 4.jpg */; };
+		7159C6351B1D9EC400E7E16D /* UIImage+cutCenterImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7159C6341B1D9EC400E7E16D /* UIImage+cutCenterImage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		7159C62C1B1D938100E7E16D /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
 		7159C62D1B1D938100E7E16D /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
 		7159C62E1B1D938100E7E16D /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
+		7159C6331B1D9EC400E7E16D /* UIImage+cutCenterImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+cutCenterImage.h"; sourceTree = "<group>"; };
+		7159C6341B1D9EC400E7E16D /* UIImage+cutCenterImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+cutCenterImage.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,8 @@
 				7159C6051B1D536400E7E16D /* Images.xcassets */,
 				7159C6071B1D536400E7E16D /* LaunchScreen.xib */,
 				7159C5F81B1D536400E7E16D /* Supporting Files */,
+				7159C6331B1D9EC400E7E16D /* UIImage+cutCenterImage.h */,
+				7159C6341B1D9EC400E7E16D /* UIImage+cutCenterImage.m */,
 			);
 			path = RAYBannerScrollView;
 			sourceTree = "<group>";
@@ -248,6 +253,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7159C6351B1D9EC400E7E16D /* UIImage+cutCenterImage.m in Sources */,
 				7159C6241B1D551500E7E16D /* RAYBannerScrollView.m in Sources */,
 				7159C6011B1D536400E7E16D /* ViewController.m in Sources */,
 				7159C5FE1B1D536400E7E16D /* AppDelegate.m in Sources */,
@@ -446,6 +452,7 @@
 				7159C61A1B1D536400E7E16D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7159C61B1B1D536400E7E16D /* Build configuration list for PBXNativeTarget "RAYBannerScrollViewTests" */ = {
 			isa = XCConfigurationList;
@@ -454,6 +461,7 @@
 				7159C61D1B1D536400E7E16D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

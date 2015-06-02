@@ -7,14 +7,13 @@
 //
 
 #import "RAYBannerScrollView.h"
+#import "UIImage+cutCenterImage.h"
 
-@interface RAYBannerScrollView() <UIScrollViewDelegate>{
-    
-}
+@interface RAYBannerScrollView() <UIScrollViewDelegate>
 
 @property (nonatomic, strong) UIScrollView  *scrollView;
 @property (nonatomic, strong) UIPageControl *pageControl;
-@property (nonatomic, strong) NSArray *slideArray;
+@property (nonatomic, strong) NSArray       *slideArray;
 
 @end
 
@@ -87,10 +86,10 @@
     [self.scrollView addSubview:imageView];
     
     for (int i = 0;i<slidecount;i++) {
-        
+//        UIImage *imagetest = [[UIImage alloc]init];
         //loop this bit
         UIImageView *imageView = [[UIImageView alloc]
-                                  initWithImage: [UIImage imageNamed:[self.slideArray objectAtIndex:i]]];//[self  cutCenterImage:[UIImage imageNamed:[self.slideArray objectAtIndex:i]] size:CGSizeMake(320, 128)]];
+                                  initWithImage:[[[UIImage alloc]init]  cutCenterImage:[UIImage imageNamed:[self.slideArray objectAtIndex:i]] size:CGSizeMake(320, 128)]];// [UIImage imageNamed:[self.slideArray objectAtIndex:i]]];
         imageView.frame = CGRectMake(320*i+320, 0, 320, 256);
         
         imageView.userInteractionEnabled = YES;
@@ -135,37 +134,7 @@
 }
 
 
-#pragma mark 根据size截取图片中间矩形区域的图片 这里的size是正方形
--(UIImage *)cutCenterImage:(UIImage *)image size:(CGSize)size{
-    CGSize imageSize = image.size;
-    CGRect rect;
-    //根据图片的大小计算出图片中间矩形区域的位置与大小
-    if (imageSize.width > imageSize.height) {
-        float leftMargin = (imageSize.width - imageSize.height) * 0.5;
-        rect = CGRectMake(leftMargin, 0, imageSize.height, imageSize.height);
-    }else{
-        float topMargin = (imageSize.height - imageSize.width) * 0.5;
-        rect = CGRectMake(0, topMargin, imageSize.width, imageSize.width);
-    }
-    
-    CGImageRef imageRef = image.CGImage;
-    //截取中间区域矩形图片
-    CGImageRef imageRefRect = CGImageCreateWithImageInRect(imageRef, rect);
-    
-    UIImage *tmp = [[UIImage alloc] initWithCGImage:imageRefRect];
-    CGImageRelease(imageRefRect);
-    
-    UIGraphicsBeginImageContext(size);
-    CGRect rectDraw = CGRectMake(0, 0, size.width, size.height);
-    [tmp drawInRect:rectDraw];
-    // 从当前context中创建一个改变大小后的图片
-    tmp = UIGraphicsGetImageFromCurrentImageContext();
-    
-    // 使当前的context出堆栈
-    UIGraphicsEndImageContext();
-    
-    return tmp;
-}
+
 
 #pragma mark - getters and setters
 - (UIScrollView  *) scrollView {
@@ -179,13 +148,14 @@
         _scrollView.userInteractionEnabled = YES;
     }
     return _scrollView;
-    
 }
 
 - (UIPageControl *) pageControl {
     
     if (_pageControl == nil) {
-        _pageControl = [[UIPageControl  alloc]initWithFrame:CGRectMake(0, self.bounds.size.height-20, self.bounds.size.width
+        _pageControl = [[UIPageControl  alloc]initWithFrame:CGRectMake(self.bounds.size.width/2, self.bounds.size.height-20, self.bounds.size.width/
+                                                                       2
+                                                                       
                                                                        , 20)];
         _pageControl.hidesForSinglePage = YES;
         _pageControl.enabled = NO;
