@@ -18,11 +18,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    RAYBannerScrollView *bannerScrollView = [[RAYBannerScrollView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height*2/5)];
-    
-    [bannerScrollView initImageWithArray:@[@"1.jpg",@"2.jpg",@"3.jpg",
-                                           @"4.jpg"]];
-    [self.view addSubview:bannerScrollView];
+//    RAYBannerScrollView *bannerScrollView = [[RAYBannerScrollView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height*2/5)];
+//    
+//    [bannerScrollView initImageWithArray:@[@"1.jpg",@"2.jpg",@"3.jpg",
+//                                           @"4.jpg"]];
+//    
+//    
+//    [self.view addSubview:bannerScrollView];//
+
     UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height*2/5, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height*3/5) style:UITableViewStylePlain];
     
     //[[UITableView alloc] initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height*2/5, [UIScreen mainScreen].bounds.size.width, [[UIScreen mainScreen].bounds.size.height*3/5) style:UITableViewStylePlain];
