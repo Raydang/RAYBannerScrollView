@@ -20,6 +20,7 @@
 		7159C6311B1D938100E7E16D /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7159C62D1B1D938100E7E16D /* 3.jpg */; };
 		7159C6321B1D938100E7E16D /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7159C62E1B1D938100E7E16D /* 4.jpg */; };
 		7159C6351B1D9EC400E7E16D /* UIImage+cutCenterImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7159C6341B1D9EC400E7E16D /* UIImage+cutCenterImage.m */; };
+		8E87E4A81BAEFEE100B46723 /* RAYScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E87E4A71BAEFEE100B46723 /* RAYScrollView.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		7159C62E1B1D938100E7E16D /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
 		7159C6331B1D9EC400E7E16D /* UIImage+cutCenterImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+cutCenterImage.h"; sourceTree = "<group>"; };
 		7159C6341B1D9EC400E7E16D /* UIImage+cutCenterImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+cutCenterImage.m"; sourceTree = "<group>"; };
+		8E87E4A61BAEFEE100B46723 /* RAYScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RAYScrollView.h; path = BannerScrollView/RAYScrollView.h; sourceTree = "<group>"; };
+		8E87E4A71BAEFEE100B46723 /* RAYScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RAYScrollView.m; path = BannerScrollView/RAYScrollView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +148,8 @@
 			children = (
 				7159C6221B1D551500E7E16D /* RAYBannerScrollView.h */,
 				7159C6231B1D551500E7E16D /* RAYBannerScrollView.m */,
+				8E87E4A61BAEFEE100B46723 /* RAYScrollView.h */,
+				8E87E4A71BAEFEE100B46723 /* RAYScrollView.m */,
 			);
 			name = BannerScrollView;
 			sourceTree = "<group>";
@@ -257,6 +262,7 @@
 				7159C6241B1D551500E7E16D /* RAYBannerScrollView.m in Sources */,
 				7159C6011B1D536400E7E16D /* ViewController.m in Sources */,
 				7159C5FE1B1D536400E7E16D /* AppDelegate.m in Sources */,
+				8E87E4A81BAEFEE100B46723 /* RAYScrollView.m in Sources */,
 				7159C5FB1B1D536400E7E16D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

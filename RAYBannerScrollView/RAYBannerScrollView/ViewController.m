@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "RAYBannerScrollView.h"
+#import "RAYScrollView.h"
 
 @interface ViewController ()
 
@@ -25,6 +26,9 @@
 //    
 //    
 //    [self.view addSubview:bannerScrollView];//
+    
+    RAYScrollView *scrollView = [[RAYScrollView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height*2/5)];
+    [self.view addSubview:scrollView];
 
     UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height*2/5, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height*3/5) style:UITableViewStylePlain];
     
