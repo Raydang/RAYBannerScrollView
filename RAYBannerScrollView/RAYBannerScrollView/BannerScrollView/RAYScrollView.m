@@ -28,11 +28,8 @@
         [self addSubview:self.scrollView];
         [self addSubview:self.pageControl];
         self.pageControl.numberOfPages = self.imageNames.count;
-        [self showImageViewAtIndex:0];
-//        self.backgroundColor = [UIColor groupTableViewBackgroundColor];
-//        [self addSubview:self.scrollView];
-//        [self addSubview:self.pageControl];
-//        
+        [self showImageViewAtIndex:0];   //显示imageview
+   
 //        UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTapped:)];
 //        [self addGestureRecognizer:tapGestureRecognizer];
     }
@@ -40,7 +37,6 @@
 }
 
 #pragma mark - UIScrollViewDelegate
-
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     [self showImages];
     
@@ -48,7 +44,7 @@
     int page = floor((self.scrollView.contentOffset.x - pagewidth/([self.imageNames count]+2))/pagewidth)+1;
 //    page --;  // 默认从第二页开始
     self.pageControl.currentPage = page;
-    [self test];
+//    [self test];
 }
 
 //- (void)scrollViewDidEndDecelerating:(UIScrollView *)sender {      // called when scroll view grinds to a halt
@@ -63,15 +59,15 @@
 //    }
 //}
 
-- (void)test {
-    NSMutableString *rs = [NSMutableString string];
-    NSInteger count = [self.scrollView.subviews count];
-    for (UIImageView *imageView in self.scrollView.subviews) {
-        [rs appendFormat:@"%p - ", imageView];
-    }
-    [rs appendFormat:@"%ld", (long)count];
-    NSLog(@"%@", rs);
-}
+//- (void)test {
+//    NSMutableString *rs = [NSMutableString string];
+//    NSInteger count = [self.scrollView.subviews count];
+//    for (UIImageView *imageView in self.scrollView.subviews) {
+//        [rs appendFormat:@"%p - ", imageView];
+//    }
+//    [rs appendFormat:@"%ld", (long)count];
+//    NSLog(@"%@", rs);
+//}
 
 #pragma mark - Private Method
 
@@ -127,17 +123,17 @@
 // 显示一个图片view
 - (void)showImageViewAtIndex:(NSInteger)index {
     
-    UIImageView *imageView = [self.reusedImageViews anyObject];
+    UIImageView *imageView = [self.reusedImageViews anyObject]; //随机返回一个元素，没有元素则返回nil
     
-    if (imageView) {
+    if (imageView) {   // 如果保存可重用集合中有元素
         [self.reusedImageViews removeObject:imageView];
     }
     else {
-        imageView = [[UIImageView alloc] init];
-        imageView.contentMode = UIViewContentModeScaleAspectFit;
+        imageView = [[UIImageView alloc] init]; //无元素初始化一个
+        imageView.contentMode = UIViewContentModeScaleAspectFit; //contents scaled to fit with fixed aspect. remainder is transparent
     }
-    CGRect bounds = self.scrollView.bounds;
-    CGRect imageViewFrame = bounds;
+    CGRect bounds = self.scrollView.bounds; //将scrollview的bounds 值取出
+    CGRect imageViewFrame = bounds;         //
     imageViewFrame.origin.x = CGRectGetWidth(bounds) * index;
     imageView.tag = index;
     imageView.frame = imageViewFrame;
@@ -168,7 +164,7 @@
                                                                        2, 20)];
         _pageControl.hidesForSinglePage = YES;
         _pageControl.enabled = NO;
-        _pageControl.numberOfPages = 2;//    _pageControl.numberOfPages = slidecount;
+//        _pageControl.numberOfPages = 2;//    _pageControl.numberOfPages = slidecount;
         _pageControl.currentPage = 0;
         _pageControl.pageIndicatorTintColor = [UIColor whiteColor];
         _pageControl.currentPageIndicatorTintColor = [UIColor brownColor];
