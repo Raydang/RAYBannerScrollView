@@ -165,7 +165,7 @@
         _pageControl.hidesForSinglePage = YES;
         _pageControl.enabled = NO;
 //        _pageControl.numberOfPages = 2;//    _pageControl.numberOfPages = slidecount;
-        _pageControl.currentPage = 0;
+        _pageControl.currentPage = 0;//
         _pageControl.pageIndicatorTintColor = [UIColor whiteColor];
         _pageControl.currentPageIndicatorTintColor = [UIColor brownColor];
     }
