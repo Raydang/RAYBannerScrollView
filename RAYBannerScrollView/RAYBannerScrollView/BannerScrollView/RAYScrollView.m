@@ -172,7 +172,7 @@
     return _pageControl;
 }
 
-- (NSArray *)imageNames {
+- (NSArray *)imageNames {//
     if (_imageNames == nil) {
         NSMutableArray *imageNames = [NSMutableArray arrayWithCapacity:50];
         
